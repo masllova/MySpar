@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+final class ViewModel {
+    let products = FileCache.parseProducts() ?? []
+    let bannersURL = FileCache.parseBanners() ?? []
+}

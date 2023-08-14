@@ -14,6 +14,8 @@
 		33789B722A8ABE5500EE65C6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B712A8ABE5500EE65C6 /* Model.swift */; };
 		33789B742A8ABE6200EE65C6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B732A8ABE6200EE65C6 /* ViewModel.swift */; };
 		33789B792A8AC15300EE65C6 /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B782A8AC15300EE65C6 /* FileCache.swift */; };
+		33789B7C2A8AC52D00EE65C6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 33789B7B2A8AC52D00EE65C6 /* SwiftyJSON */; };
+		33789B822A8AD3C200EE65C6 /* Directions.json in Resources */ = {isa = PBXBuildFile; fileRef = 33789B702A8A7F7E00EE65C6 /* Directions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33789B7C2A8AC52D00EE65C6 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +121,9 @@
 			dependencies = (
 			);
 			name = MySpar;
+			packageProductDependencies = (
+				33789B7B2A8AC52D00EE65C6 /* SwiftyJSON */,
+			);
 			productName = MySpar;
 			productReference = 33789B5F2A8A7DBA00EE65C6 /* MySpar.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 33789B562A8A7DBA00EE65C6;
+			packageReferences = (
+				33789B7A2A8AC52D00EE65C6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 33789B602A8A7DBA00EE65C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,6 +171,7 @@
 			files = (
 				33789B6A2A8A7DBB00EE65C6 /* Preview Assets.xcassets in Resources */,
 				33789B672A8A7DBB00EE65C6 /* Assets.xcassets in Resources */,
+				33789B822A8AD3C200EE65C6 /* Directions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33789B7A2A8AC52D00EE65C6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33789B7B2A8AC52D00EE65C6 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33789B7A2A8AC52D00EE65C6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33789B572A8A7DBA00EE65C6 /* Project object */;
 }
