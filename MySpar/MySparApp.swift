@@ -11,7 +11,7 @@ import SwiftUI
 struct MySparApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreenView()
         }
     }
 }
