@@ -1,116 +1,116 @@
 {
-    products [
+    "products": [
         {
-            id: 1,
-            name: "Мороженое Монтерра Тирамису",
-            category: "Рекомендуем"
-            inf: "Цена по карте"
-            image: "https://s.myspar.ru/upload/img/10/1012/101274060.jpg?1664355855"
-            price: 399.90
-            oldPrice: 599.90
-            measurement: "шт"
-            discount: 33
+            "id": 1,
+            "name": "Мороженое Монтерра Тирамису",
+            "category": "Рекомендуем",
+            "information": "Цена по карте",
+            "image": "https://s.myspar.ru/upload/img/10/1012/101274060.jpg?1664355855",
+            "price": 399.90,
+            "old_price": 599.90,
+            "measurement": "шт",
+            "discount": 33,
         },
         {
-            id: 2,
-            name: ["Блинчики с Грибным Жюльеном"],
-            category: "Рекомендуем"
-            inf: null
-            image: "https://s.myspar.ru/upload/img/10/1010/101004351.jpg?1596799816"
-            price: 41.90
-            oldPrice: null
-            measurement: "100г"
-            discount: null
+            "id": 2,
+            "name": ["Блинчики с Грибным Жюльеном"],
+            "category": "Рекомендуем",
+            "information": null,
+            "image": "https://s.myspar.ru/upload/img/10/1010/101004351.jpg?1596799816",
+            "price": 41.90,
+            "old_price": null,
+            "measurement": "100г",
+            "discount": null,
         }, {
-            id: 3,
-            name: "Салат Фруктовый с Голубикой",
-            category: "Рекомендуем"
-            inf: "Удар по ценам"
-            image: "https://s.myspar.ru/upload/img/13/1344/134463.jpg?1690986059"
-            price: 75.90
-            oldPrice: 85.90
-            measurement: "100г"
-            discount: 12
+            "id": 3,
+            "name": "Салат Фруктовый с Голубикой",
+            "category": "Рекомендуем",
+            "information": "Удар по ценам",
+            "image": "https://s.myspar.ru/upload/img/13/1344/134463.jpg?1690986059",
+            "price": 75.90,
+            "old_price": 85.90,
+            "measurement": "100г",
+            "discount": 12,
         },
         {
-            id: 4,
-            name: "Молоко Сгущенное SPAR 8,5%",
-            category: "Рекомендуем"
-            inf: "Удар по ценам"
-            image: "https://s.myspar.ru/upload/img/10/1001/100132861.jpg?1579268577"
-            price: 109.90
-            oldPrice: 129.90
-            measurement: "шт"
-            discount: 15
+            "id": 4,
+            "name": "Молоко Сгущенное SPAR 8,5%",
+            "category": "Рекомендуем",
+            "information": "Удар по ценам",
+            "image": "https://s.myspar.ru/upload/img/10/1001/100132861.jpg?1579268577",
+            "price": 109.90,
+            "old_price": 129.90,
+            "measurement": "шт",
+            "discount": 15,
         },
         {
-            id: 5,
-            name: "Чипсы Pringles Оригинал 165г",
-            category: "Рекомендуем"
-            inf: null
-            image: "https://s.myspar.ru/upload/img/12/1214/121448.jpg?1579275039"
-            price: 279.90
-            oldPrice: null
-            measurement: "шт"
-            discount: null
+            "id": 5,
+            "name": "Чипсы Pringles Оригинал 165г",
+            "category": "Рекомендуем",
+            "information": null,
+            "image": "https://s.myspar.ru/upload/img/12/1214/121448.jpg?1579275039",
+            "price": 279.90,
+            "old_price": null,
+            "measurement": "шт",
+            "discount": null,
         },
         {
-            id: 6,
-            name: "Мороженое Сливочное Особая Коллекция Жареный Арахис в Карамели 300г",
-            category: "Сладкое настроение"
-            inf: null
-            image: "https://s.myspar.ru/upload/img/10/1013/101302500.jpg?1673243291"
-            price: 319.00
-            oldPrice: null
-            measurement: "шт"
-            discount: null
+            "id": 6,
+            "name": "Мороженое Сливочное Особая Коллекция Жареный Арахис в Карамели 300г",
+            "category": "Сладкое настроение",
+            "information": null,
+            "image": "https://s.myspar.ru/upload/img/10/1013/101302500.jpg?1673243291",
+            "price": 319.00,
+            "old_price": null,
+            "measurement": "шт",
+            "discount": null,
         },
         {
-            id: 7,
-            name: "Мороженое Пломбир Особая Коллекция Малиновый Пирог с Белым Шоколадом 300г",
-            category: "Сладкое настроение"
-            inf: null
-            image: "https://s.myspar.ru/upload/img/10/1013/101302518.jpg?1673243291"
-            price: 319.00
-            oldPrice: null
-            measurement: "шт"
-            discount: null
+            "id": 7,
+            "name": "Мороженое Пломбир Особая Коллекция Малиновый Пирог с Белым Шоколадом 300г",
+            "category": "Сладкое настроение",
+            "information": null,
+            "image": "https://s.myspar.ru/upload/img/10/1013/101302518.jpg?1673243291",
+            "price": 319.00,
+            "old_price": null,
+            "measurement": "шт",
+            "discount": null,
         },
         {
-            id: 8,
-            name: "Маршмеллоу Lovely Mallows со Вкусом Клубники и Ванили 150г",
-            category: "Сладкое настроение"
-            inf: "Новинка"
-            image: "https://s.myspar.ru/upload/img/10/1013/101351150.jpg?1689620796"
-            price: 149.90
-            oldPrice: null
-            measurement: "шт"
-            discount: null
+            "id": 8,
+            "name": "Маршмеллоу Lovely Mallows со Вкусом Клубники и Ванили 150г",
+            "category": "Сладкое настроение",
+            "information": "Новинка",
+            "image": "https://s.myspar.ru/upload/img/10/1013/101351150.jpg?1689620796",
+            "price": 149.90,
+            "old_price": null,
+            "measurement": "шт",
+            "discount": null,
         },
         {
-            id: 9,
-            name: "Мармелад Jellopy Жевательный Кола 100г",
-            category: "Сладкое настроение"
-            inf: "Новинка"
-            image: "https://s.myspar.ru/upload/img/10/1013/101351184.jpg?1689620797"
-            price: 79.90
-            oldPrice: null
-            measurement: "шт"
-            discount: null
+            "id": 9,
+            "name": "Мармелад Jellopy Жевательный Кола 100г",
+            "category": "Сладкое настроение",
+            "information": "Новинка",
+            "image": "https://s.myspar.ru/upload/img/10/1013/101351184.jpg?1689620797",
+            "price": 79.90,
+            "old_price": null,
+            "measurement": "шт",
+            "discount": null,
         },
         {
-            id: 10,
-            name: "Мороженое Пломбир Особая Коллекция Сливочная Ириска 300г",
-            category: "Сладкое настроение"
-            inf: null
-            image: "https://s.myspar.ru/upload/img/10/1013/101341120.jpg?1686725937"
-            price: 319.90
-            oldPrice: null
-            measurement: "шт"
-            discount: null
+            "id": 10,
+            "name": "Мороженое Пломбир Особая Коллекция Сливочная Ириска 300г",
+            "category": "Сладкое настроение",
+            "information": null,
+            "image": "https://s.myspar.ru/upload/img/10/1013/101341120.jpg?1686725937",
+            "price": 319.90,
+            "old_price": null,
+            "measurement": "шт",
+            "discount": null,
         }
     ],
-    banners: [
+    "banners": [
         "https://s.myspar.ru/upload/iblock/0c7/Sezonnye.png?1692011360",
         "https://s.myspar.ru/upload/iblock/156/TOP-107.webp?1691183317",
         "https://s.myspar.ru/upload/iblock/c3c/Sezonnye.webp?1689874288",
