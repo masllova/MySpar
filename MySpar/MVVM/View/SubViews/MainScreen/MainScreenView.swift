@@ -21,10 +21,13 @@ struct MainScreenView: View {
                     banners
                     saleCard
                     informationCards
+                    // recomendation
                     createCategoryLabel(category: Categories.recomendation)
-                    //
+                    createProdictsListByCategoty(category: Categories.recomendation)
+                    // sweetMood
                     createCategoryLabel(category: Categories.sweetMood)
-                    //
+                    createProdictsListByCategoty(category: Categories.sweetMood)
+                    // ...and others
                 }.padding(.horizontal, 16)
                 
             }
@@ -106,6 +109,8 @@ struct MainScreenView: View {
         Image.saleCard
             .resizable()
             .frame(width: 353, height: 100)
+            .cornerRadius(8)
+            .shadow(color: .shadow, radius: 2)
     }
     var informationCards: some View {
         ScrollView (.horizontal, showsIndicators: false) {
@@ -114,6 +119,7 @@ struct MainScreenView: View {
                     Image(image)
                         .resizable()
                         .frame(width: 100, height: 120)
+                        .shadow(color: .shadow, radius: 2)
                 }
             }
         }
@@ -126,6 +132,16 @@ struct MainScreenView: View {
                 .font(.system(size: 20))
                 .bold()
             Spacer()
+        }
+    }
+    
+    func createProdictsListByCategoty (category: String) -> some View {
+        ScrollView (.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 10) {
+                ForEach(vm.getProductsByCategory(category: category), id: \.self) { product in
+                    ProductCardView(product: product)
+                }
+            }
         }
     }
     

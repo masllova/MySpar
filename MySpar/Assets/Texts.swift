@@ -31,7 +31,7 @@ enum StoriesLabels {
 
 enum Categories {
     static let recomendation = "Рекомендуем"
-    static let sweetMood = "Sweet mood"
+    static let sweetMood = "Сладкое настроение"
     // ...and others
 }
 

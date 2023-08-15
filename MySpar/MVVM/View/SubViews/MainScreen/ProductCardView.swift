@@ -22,7 +22,11 @@ struct ProductCardView: View {
                 }
                 
             }
-        }.frame(width: 132, height: 172)
+        }
+        .cornerRadius(8)
+        .padding(3)
+        .frame(width: 132, height: 172)
+        .shadow(color: .shadow, radius: 4)
     }
     var image: some View {
         VStack {

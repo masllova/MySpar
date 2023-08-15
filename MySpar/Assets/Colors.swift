@@ -16,4 +16,5 @@ extension Color {
     static let redMarker = Color("RedMarker")
     static let purpleMarker = Color("PurpleMarker")
     static let discount = Color("DiscountColor")
+    static let shadow = Color("Shadow")
 }

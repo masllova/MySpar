@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product {
+struct Product: Hashable {
     var id: String
     var category: String
     var inf: String?

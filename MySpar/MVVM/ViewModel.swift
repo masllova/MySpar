@@ -22,7 +22,7 @@ final class ViewModel {
         Stories(imageName: "s8", description: StoriesLabels.s8)]
     let cardsCollection = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"]
     
-    func storyByIndexIsViewed (index: Int) {
-
+    func getProductsByCategory (category: String) -> [Product] {
+        products.filter { $0.category == category }
     }
 }
