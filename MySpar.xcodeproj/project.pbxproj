@@ -18,6 +18,12 @@
 		33789B822A8AD3C200EE65C6 /* Directions.json in Resources */ = {isa = PBXBuildFile; fileRef = 33789B702A8A7F7E00EE65C6 /* Directions.json */; };
 		33789B842A8ADDC100EE65C6 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B832A8ADDC000EE65C6 /* Images.swift */; };
 		33789B862A8AE25E00EE65C6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B852A8AE25E00EE65C6 /* Colors.swift */; };
+		33789B892A8BB24500EE65C6 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B882A8BB24500EE65C6 /* ProductCardView.swift */; };
+		33789B8B2A8BB28200EE65C6 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B8A2A8BB28200EE65C6 /* Texts.swift */; };
+		33789B8D2A8BB52D00EE65C6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B8C2A8BB52D00EE65C6 /* TabBarView.swift */; };
+		33789B922A8BB78400EE65C6 /* CatalogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B912A8BB78400EE65C6 /* CatalogScreenView.swift */; };
+		33789B952A8BB7AA00EE65C6 /* CartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B942A8BB7AA00EE65C6 /* CartScreenView.swift */; };
+		33789B982A8BB7DB00EE65C6 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B972A8BB7DB00EE65C6 /* ProfileScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		33789B782A8AC15300EE65C6 /* FileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
 		33789B832A8ADDC000EE65C6 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		33789B852A8AE25E00EE65C6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		33789B882A8BB24500EE65C6 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		33789B8A2A8BB28200EE65C6 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
+		33789B8C2A8BB52D00EE65C6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		33789B912A8BB78400EE65C6 /* CatalogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenView.swift; sourceTree = "<group>"; };
+		33789B942A8BB7AA00EE65C6 /* CartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreenView.swift; sourceTree = "<group>"; };
+		33789B972A8BB7DB00EE65C6 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +100,7 @@
 			children = (
 				33789B712A8ABE5500EE65C6 /* Model.swift */,
 				33789B732A8ABE6200EE65C6 /* ViewModel.swift */,
-				33789B642A8A7DBA00EE65C6 /* MainScreenView.swift */,
+				33789B872A8BB22500EE65C6 /* View */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -107,8 +119,62 @@
 				33789B662A8A7DBB00EE65C6 /* Assets.xcassets */,
 				33789B832A8ADDC000EE65C6 /* Images.swift */,
 				33789B852A8AE25E00EE65C6 /* Colors.swift */,
+				33789B8A2A8BB28200EE65C6 /* Texts.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		33789B872A8BB22500EE65C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33789B8C2A8BB52D00EE65C6 /* TabBarView.swift */,
+				33789B8E2A8BB74200EE65C6 /* SubViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33789B8E2A8BB74200EE65C6 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				33789B8F2A8BB76100EE65C6 /* MainScreen */,
+				33789B902A8BB76C00EE65C6 /* CatalogScreen */,
+				33789B932A8BB79000EE65C6 /* CartScreen */,
+				33789B962A8BB7C700EE65C6 /* ProfileScreen */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		33789B8F2A8BB76100EE65C6 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				33789B642A8A7DBA00EE65C6 /* MainScreenView.swift */,
+				33789B882A8BB24500EE65C6 /* ProductCardView.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		33789B902A8BB76C00EE65C6 /* CatalogScreen */ = {
+			isa = PBXGroup;
+			children = (
+				33789B912A8BB78400EE65C6 /* CatalogScreenView.swift */,
+			);
+			path = CatalogScreen;
+			sourceTree = "<group>";
+		};
+		33789B932A8BB79000EE65C6 /* CartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				33789B942A8BB7AA00EE65C6 /* CartScreenView.swift */,
+			);
+			path = CartScreen;
+			sourceTree = "<group>";
+		};
+		33789B962A8BB7C700EE65C6 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				33789B972A8BB7DB00EE65C6 /* ProfileScreenView.swift */,
+			);
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,12 +254,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33789B8D2A8BB52D00EE65C6 /* TabBarView.swift in Sources */,
 				33789B722A8ABE5500EE65C6 /* Model.swift in Sources */,
+				33789B922A8BB78400EE65C6 /* CatalogScreenView.swift in Sources */,
 				33789B842A8ADDC100EE65C6 /* Images.swift in Sources */,
+				33789B982A8BB7DB00EE65C6 /* ProfileScreenView.swift in Sources */,
 				33789B652A8A7DBA00EE65C6 /* MainScreenView.swift in Sources */,
+				33789B8B2A8BB28200EE65C6 /* Texts.swift in Sources */,
 				33789B862A8AE25E00EE65C6 /* Colors.swift in Sources */,
 				33789B742A8ABE6200EE65C6 /* ViewModel.swift in Sources */,
 				33789B792A8AC15300EE65C6 /* FileCache.swift in Sources */,
+				33789B952A8BB7AA00EE65C6 /* CartScreenView.swift in Sources */,
+				33789B892A8BB24500EE65C6 /* ProductCardView.swift in Sources */,
 				33789B632A8A7DBA00EE65C6 /* MySparApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,13 +9,10 @@ import SwiftUI
 
 struct MainScreenView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color.background.ignoresSafeArea()
+            TabBarLabels.main.label
         }
-        .padding()
     }
 }
 
