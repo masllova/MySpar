@@ -25,4 +25,16 @@ final class ViewModel {
     func getProductsByCategory (category: String) -> [Product] {
         products.filter { $0.category == category }
     }
+    func choseLocation() {
+       //
+    }
+    func storyByIndexIsViewed (index: Int) {
+        //
+    }
+    func showBannersDetail() {
+        //
+    }
+    func showPersonalSaleCardDetail() {
+        //
+    }
 }

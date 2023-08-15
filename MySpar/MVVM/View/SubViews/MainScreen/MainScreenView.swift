@@ -49,11 +49,15 @@ struct MainScreenView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.subLabel, lineWidth: 0.5)
             )
-            Image.lines
-                .resizable()
-                .frame(width: 18, height: 13)
-                .foregroundColor(.greenAccent)
-            
+            .onTapGesture { vm.choseLocation() }
+            NavigationLink {
+                //
+            } label: {
+                Image.lines
+                    .resizable()
+                    .frame(width: 18, height: 13)
+                    .foregroundColor(.greenAccent)
+            }
         }
     }
     var stories: some View {
@@ -90,15 +94,19 @@ struct MainScreenView: View {
             LazyHStack(spacing: 10) {
                 ForEach(vm.bannersURL, id: \.self) { url in
                     if let imageURL = URL(string: url) {
-                        AsyncImage(url: imageURL) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 323)
-                                .cornerRadius(10)
-                        } placeholder: {
-                            ProgressView()
-                                .frame(width: 343, height: 160)
+                        Button {
+                            vm.showBannersDetail()
+                        } label: {
+                            AsyncImage(url: imageURL) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 323)
+                                    .cornerRadius(10)
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: 343, height: 160)
+                            }
                         }
                     }
                 }
@@ -106,20 +114,29 @@ struct MainScreenView: View {
         }
     }
     var saleCard: some View {
-        Image.saleCard
-            .resizable()
-            .frame(width: 353, height: 100)
-            .cornerRadius(8)
-            .shadow(color: .shadow, radius: 2)
+        Button {
+            vm.showPersonalSaleCardDetail()
+        } label: {
+            Image.saleCard
+                .resizable()
+                .frame(width: 353, height: 100)
+                .cornerRadius(8)
+                .shadow(color: .shadow, radius: 2)
+        }
     }
     var informationCards: some View {
         ScrollView (.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 10) {
                 ForEach(vm.cardsCollection, id: \.self) { image in
-                    Image(image)
-                        .resizable()
-                        .frame(width: 100, height: 120)
-                        .shadow(color: .shadow, radius: 2)
+                    NavigationLink {
+                        //
+                    } label: {
+                        Image(image)
+                            .resizable()
+                            .frame(width: 100, height: 120)
+                            .shadow(color: .shadow, radius: 2)
+                    }
+
                 }
             }
         }
@@ -139,7 +156,12 @@ struct MainScreenView: View {
         ScrollView (.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 10) {
                 ForEach(vm.getProductsByCategory(category: category), id: \.self) { product in
-                    ProductCardView(product: product)
+                    NavigationLink {
+                        //
+                    } label: {
+                        ProductCardView(product: product)
+                    }
+
                 }
             }
         }
