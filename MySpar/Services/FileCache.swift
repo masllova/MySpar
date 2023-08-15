@@ -26,7 +26,6 @@ final class FileCache {
         }
         return nil
     }
-    
     static func parseProducts() -> [Product]? {
         if let fileURL = Bundle.main.url(forResource: "Directions", withExtension: "json") {
             if let jsonData = try? Data(contentsOf: fileURL) {
@@ -53,7 +52,6 @@ final class FileCache {
                     return nil
                 }
             }
-            
         }
         return nil
     }

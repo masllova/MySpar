@@ -10,6 +10,7 @@ import Foundation
 final class ViewModel {
     let products = FileCache.parseProducts() ?? []
     let bannersURL = FileCache.parseBanners() ?? []
+    let cardsCollection = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"]
     
     var storiesCollection = [
         Stories(imageName: "s1", description: StoriesLabels.s1),
@@ -20,7 +21,6 @@ final class ViewModel {
         Stories(imageName: "s6", description: StoriesLabels.s6),
         Stories(imageName: "s7", description: StoriesLabels.s7),
         Stories(imageName: "s8", description: StoriesLabels.s8)]
-    let cardsCollection = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"]
     
     func getProductsByCategory (category: String) -> [Product] {
         products.filter { $0.category == category }
@@ -35,6 +35,9 @@ final class ViewModel {
         //
     }
     func showPersonalSaleCardDetail() {
+        //
+    }
+    func putItInShoppingCart() {
         //
     }
 }

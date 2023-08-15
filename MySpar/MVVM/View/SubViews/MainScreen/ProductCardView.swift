@@ -10,6 +10,7 @@ import SDWebImageSwiftUI
 
 struct ProductCardView: View {
     @State private var isImageLoaded = false
+    unowned var vm: ViewModel
     var product: Product
     var body: some View {
         ZStack {
@@ -46,7 +47,6 @@ struct ProductCardView: View {
                 WebImage(url: url)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    
             }
             Spacer()
         }
@@ -64,26 +64,11 @@ struct ProductCardView: View {
                         Rectangle()
                             .clipShape(RoundedCorner(radius: 6, corners: [.topRight, .bottomRight]))
                             .foregroundColor(correctColor(inf: inf))
-
                         )
-
                 Spacer()
             }
         }
     }
-    
-    func correctColor(inf: String) -> Color {
-        if inf == Information.new {
-            return .purpleMarker
-        } else if inf == Information.blowToPrices {
-            return .redMarker
-        } else if inf == Information.priceByCard {
-            return .greenMarker
-        } else {
-            return .clear
-        }
-    }
-    
     @ViewBuilder
     var discount: some View {
         if let value = product.discount {
@@ -117,8 +102,23 @@ struct ProductCardView: View {
                 }
             }
             Spacer()
-            Image.cart
+            Button {
+                vm.putItInShoppingCart()
+            } label: {
+                Image.cart
+            }
         }.padding(.horizontal, 3)
+    }
+    func correctColor(inf: String) -> Color {
+        if inf == Information.new {
+            return .purpleMarker
+        } else if inf == Information.blowToPrices {
+            return .redMarker
+        } else if inf == Information.priceByCard {
+            return .greenMarker
+        } else {
+            return .clear
+        }
     }
     private func loadImage() {
            DispatchQueue.global().async {
@@ -133,6 +133,6 @@ struct ProductCardView: View {
 
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCardView(product: ViewModel().products[0])
+        ProductCardView(vm: ViewModel(), product: ViewModel().products[0])
     }
 }

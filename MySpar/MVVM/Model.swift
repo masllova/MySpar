@@ -17,7 +17,6 @@ struct Product: Hashable {
     var measurement: String
     var discount: Int?
 }
-
 struct Stories: Hashable {
     let imageName: String
     let description: String

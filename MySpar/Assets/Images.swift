@@ -19,17 +19,10 @@ enum TabBarImages: String, CaseIterable {
     case catalog = "Catalog"
     case cart = "ShoppingCart"
     case profile = "Person"
-    
     var image: Image {
         return Image(self.rawValue)
             .renderingMode(.template)
     }
-    
-    var selectedColor: Color {
-        return .greenAccent
-    }
-    
-    var deselectedColor: Color {
-        return .subLabel
-    }
+    var selectedColor: Color { .greenAccent }
+    var deselectedColor: Color { .subLabel }
 }

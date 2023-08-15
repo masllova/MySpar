@@ -30,9 +30,7 @@ struct MainScreenView: View {
                     createProdictsListByCategoty(category: Categories.sweetMood)
                     // ...and others
                 }.padding(.horizontal, 16)
-                
             }
-            
         }
     }
     var header: some View {
@@ -141,12 +139,10 @@ struct MainScreenView: View {
                             .frame(width: 100, height: 120)
                             .shadow(color: .shadow, radius: 2)
                     }
-
                 }
             }
         }
     }
-    
     
     func createCategoryLabel(category: String) -> some View {
         HStack {
@@ -156,7 +152,6 @@ struct MainScreenView: View {
             Spacer()
         }
     }
-    
     func createProdictsListByCategoty (category: String) -> some View {
         ScrollView (.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 10) {
@@ -164,7 +159,7 @@ struct MainScreenView: View {
                     NavigationLink {
                         //
                     } label: {
-                        ProductCardView(product: product)
+                        ProductCardView(vm: vm, product: product)
                     }
 
                 }

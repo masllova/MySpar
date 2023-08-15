@@ -28,7 +28,6 @@ struct TabBarView: View {
                 TabBarLabels.profile.label
             }
         }.accentColor(.greenAccent)
-        
     }
 }
 
