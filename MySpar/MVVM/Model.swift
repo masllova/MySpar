@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct ProductCard {
+struct Product {
     var id: String
     var category: String
     var inf: String?
     var image: String
-    var price: String
-    var oldPrice: Int?
+    var price: Double
+    var oldPrice: Double?
     var measurement: String
     var discount: Int?
 }

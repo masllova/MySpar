@@ -35,6 +35,12 @@ enum Categories {
     // ...and others
 }
 
+enum Information {
+    static let new = "Новинка"
+    static let priceByCard = "Цена по карте"
+    static let blowToPrices = "Удар по ценам"
+}
+
 enum Locations: String, CaseIterable {
     case moscow = "Москва, Москва и Московская область"
     // ...and others

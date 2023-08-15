@@ -10,7 +10,7 @@ import SwiftUI
 extension Image {
     static let location = Image("Location")
     static let lines = Image(systemName: "line.3.horizontal")
-    static let cart = Image("Card")
+    static let cart = Image("Cart")
     static let saleCard = Image("PersonalSaleCard")
     }
 
