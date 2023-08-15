@@ -9,14 +9,26 @@ import SwiftUI
 
 struct MainScreenView: View {
     var vm = ViewModel()
+    @State private var currentBannerIndex = 0
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
-            VStack {
+            ScrollView {
                 header
                 Divider()
                 stories
+                VStack(spacing: 16) {
+                    banners
+                    saleCard
+                    informationCards
+                    createCategoryLabel(category: Categories.recomendation)
+                    //
+                    createCategoryLabel(category: Categories.sweetMood)
+                    //
+                }.padding(.horizontal, 16)
+                
             }
+            
         }
     }
     var header: some View {
@@ -67,9 +79,56 @@ struct MainScreenView: View {
                     }.padding(.top, 10)
                     
                 }
-            }.padding(.horizontal, 16)
+            }
         }
     }
+    var banners: some View {
+        ScrollView (.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 10) {
+                ForEach(vm.bannersURL, id: \.self) { url in
+                    if let imageURL = URL(string: url) {
+                        AsyncImage(url: imageURL) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 323)
+                                .cornerRadius(10)
+                        } placeholder: {
+                            ProgressView()
+                                .frame(width: 343, height: 160)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    var saleCard: some View {
+        Image.saleCard
+            .resizable()
+            .frame(width: 353, height: 100)
+    }
+    var informationCards: some View {
+        ScrollView (.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 10) {
+                ForEach(vm.cardsCollection, id: \.self) { image in
+                    Image(image)
+                        .resizable()
+                        .frame(width: 100, height: 120)
+                }
+            }
+        }
+    }
+    
+    
+    func createCategoryLabel(category: String) -> some View {
+        HStack {
+            Text(category)
+                .font(.system(size: 20))
+                .bold()
+            Spacer()
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -77,3 +136,4 @@ struct ContentView_Previews: PreviewProvider {
         MainScreenView()
     }
 }
+

@@ -29,13 +29,10 @@ enum StoriesLabels {
     static let s8 = "100 000\nбонусов"
 }
 
-enum MainScreenLabels: String, CaseIterable {
-    case recomendation = "Рекомендуем"
-    case sweetMood = "Sweet mood"
+enum Categories {
+    static let recomendation = "Рекомендуем"
+    static let sweetMood = "Sweet mood"
     // ...and others
-    var label: some View {
-        Text(rawValue)
-    }
 }
 
 enum Locations: String, CaseIterable {
