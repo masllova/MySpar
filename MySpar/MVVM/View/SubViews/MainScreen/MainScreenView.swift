@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MainScreenView: View {
     var vm = ViewModel()
@@ -97,15 +98,19 @@ struct MainScreenView: View {
                         Button {
                             vm.showBannersDetail()
                         } label: {
-                            AsyncImage(url: imageURL) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 323)
-                                    .cornerRadius(10)
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(width: 343, height: 160)
+                            if #available(iOS 15.0, *) {
+                                AsyncImage(url: imageURL) { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 323)
+                                        .cornerRadius(10)
+                                } placeholder: {
+                                    ProgressView()
+                                        .frame(width: 343, height: 160)
+                                }
+                            } else {
+                                WebImage(url: imageURL)
                             }
                         }
                     }

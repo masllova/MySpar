@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ProductCardView: View {
     var product: Product
@@ -30,11 +31,18 @@ struct ProductCardView: View {
     }
     var image: some View {
         VStack {
-            AsyncImage(url: URL(string: product.image)) { image in
-                image
+            if #available(iOS 15.0, *) {
+                AsyncImage(url: URL(string: product.image)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: { ProgressView().frame(width: 132, height: 142) }
+            } else {
+                WebImage(url: URL(string: product.image))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            } placeholder: { ProgressView().frame(width: 132, height: 142) }
+                    
+            }
             Spacer()
         }
     }

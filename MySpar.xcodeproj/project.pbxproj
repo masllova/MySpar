@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334E2A6B2A8C1C3900EDE207 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 334E2A6A2A8C1C3900EDE207 /* SDWebImageSwiftUI */; };
 		33789B632A8A7DBA00EE65C6 /* MySparApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B622A8A7DBA00EE65C6 /* MySparApp.swift */; };
 		33789B652A8A7DBA00EE65C6 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33789B642A8A7DBA00EE65C6 /* MainScreenView.swift */; };
 		33789B672A8A7DBB00EE65C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33789B662A8A7DBB00EE65C6 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334E2A6B2A8C1C3900EDE207 /* SDWebImageSwiftUI in Frameworks */,
 				33789B7C2A8AC52D00EE65C6 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +200,7 @@
 			name = MySpar;
 			packageProductDependencies = (
 				33789B7B2A8AC52D00EE65C6 /* SwiftyJSON */,
+				334E2A6A2A8C1C3900EDE207 /* SDWebImageSwiftUI */,
 			);
 			productName = MySpar;
 			productReference = 33789B5F2A8A7DBA00EE65C6 /* MySpar.app */;
@@ -229,6 +232,7 @@
 			mainGroup = 33789B562A8A7DBA00EE65C6;
 			packageReferences = (
 				33789B7A2A8AC52D00EE65C6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				334E2A692A8C1C3900EDE207 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 33789B602A8A7DBA00EE65C6 /* Products */;
 			projectDirPath = "";
@@ -406,7 +410,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,7 +442,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +483,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		334E2A692A8C1C3900EDE207 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		33789B7A2A8AC52D00EE65C6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -490,6 +502,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		334E2A6A2A8C1C3900EDE207 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 334E2A692A8C1C3900EDE207 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		33789B7B2A8AC52D00EE65C6 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 33789B7A2A8AC52D00EE65C6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
