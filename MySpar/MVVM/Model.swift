@@ -17,3 +17,14 @@ struct ProductCard {
     var measurement: String
     var discount: Int?
 }
+
+struct Stories: Hashable {
+    let imageName: String
+    let description: String
+    var isViewed: Bool
+    init(imageName: String, description: String, isViewed: Bool = false) {
+        self.imageName = imageName
+        self.description = description
+        self.isViewed = isViewed
+    }
+}
