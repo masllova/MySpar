@@ -9,17 +9,20 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ProductCardView: View {
+    @State private var isImageLoaded = false
     var product: Product
     var body: some View {
         ZStack {
             Color.background
             ZStack {
               image
-                VStack {
-                    information
-                    Spacer()
-                    discount
-                    purchasePanel
+                if isImageLoaded{
+                    VStack {
+                        information
+                        Spacer()
+                        discount
+                        purchasePanel
+                    }
                 }
                 
             }
@@ -28,17 +31,19 @@ struct ProductCardView: View {
         .padding(3)
         .frame(width: 132, height: 172)
         .shadow(color: .shadow, radius: 4)
+        .onAppear{ loadImage() }
     }
     var image: some View {
         VStack {
+            let url = URL(string: product.image)
             if #available(iOS 15.0, *) {
-                AsyncImage(url: URL(string: product.image)) { image in
+                AsyncImage(url: url) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 } placeholder: { ProgressView().frame(width: 132, height: 142) }
             } else {
-                WebImage(url: URL(string: product.image))
+                WebImage(url: url)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     
@@ -115,6 +120,15 @@ struct ProductCardView: View {
             Image.cart
         }.padding(.horizontal, 3)
     }
+    private func loadImage() {
+           DispatchQueue.global().async {
+               if let url = URL(string: product.image), let _ = try? Data(contentsOf: url) {
+                   DispatchQueue.main.async {
+                       isImageLoaded = true
+                   }
+               }
+           }
+       }
 }
 
 struct ProductCardView_Previews: PreviewProvider {
