@@ -12,4 +12,7 @@ extension Color {
     static let greenAccent = Color("GreenAccent")
     static let label = Color("Label")
     static let subLabel = Color("SubLabel")
+    static let greenMarker = Color("GreenMarker")
+    static let redMarker = Color("RedMarker")
+    static let purpleMarker = Color("PurpleMarker")
 }
