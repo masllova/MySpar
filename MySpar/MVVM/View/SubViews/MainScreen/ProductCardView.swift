@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
 
 struct ProductCardView: View {
     @State private var isImageLoaded = false
+    @State private var asyncImage: Image?
     unowned var vm: ViewModel
     var product: Product
     var body: some View {
@@ -35,20 +35,24 @@ struct ProductCardView: View {
         .onAppear{ loadImage() }
     }
     var image: some View {
-        VStack {
-            let url = URL(string: product.image)
-            if #available(iOS 15.0, *) {
-                AsyncImage(url: url) { image in
+        if #available(iOS 15.0, *) {
+            return VStack {
+                AsyncImage(url: URL(string: product.image)) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 } placeholder: { ProgressView().frame(width: 132, height: 142) }
-            } else {
-                WebImage(url: url)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                Spacer()
             }
-            Spacer()
+        } else {
+            return VStack {
+                if let image = asyncImage {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else { ProgressView().frame(width: 132, height: 142) }
+                Spacer()
+            }.onAppear(perform: nativeAsyncImageLoader)
         }
     }
     @ViewBuilder
@@ -129,6 +133,15 @@ struct ProductCardView: View {
                }
            }
        }
+    func nativeAsyncImageLoader() {
+        guard let url = URL(string: product.image) else { return }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let uiImage = UIImage(data: data) {
+                self.asyncImage = Image(uiImage: uiImage)
+            }
+        }.resume()
+    }
 }
 
 struct ProductCardView_Previews: PreviewProvider {
