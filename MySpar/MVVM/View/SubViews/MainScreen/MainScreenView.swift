@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
 
 struct MainScreenView: View {
     var vm = ViewModel()
@@ -108,7 +107,19 @@ struct MainScreenView: View {
                                         .frame(width: 343, height: 160)
                                 }
                             } else {
-                                WebImage(url: imageURL)
+                                Group {
+                                    if let data = try? Data(contentsOf: imageURL) {
+                                        if let uiImage = UIImage(data: data) {
+                                            Image(uiImage: uiImage)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 323)
+                                                .cornerRadius(10)
+                                        }
+                                    } else {
+                                        ProgressView().frame(width: 343, height: 160)
+                                    }
+                                }
                             }
                         }
                     }
